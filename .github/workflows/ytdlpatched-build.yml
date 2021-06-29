@@ -23,4 +23,4 @@ jobs:
         pip install -U git+https://github.com/Nuitka/Nuitka \
           zopflipy websockets pyyaml python-dateutil mutagen pycryptodome websockets
     - name: Test building it
-      run: python3 -m nuitka --onefile yt_dlp/__main__.py
+      run: yes | python3 -m nuitka --onefile yt_dlp/__main__.py
