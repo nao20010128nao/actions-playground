@@ -22,4 +22,4 @@ jobs:
         python -m pip install -U pip
         pip install -U nuitka zopflipy websockets pyyaml python-dateutil mutagen pycryptodome websockets
     - name: Test building it
-      run: nuitka --onefile yt_dlp/__main__.py
+      run: python3 -m nuitka --onefile yt_dlp/__main__.py
