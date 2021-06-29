@@ -10,7 +10,10 @@ on:
 
 jobs:
   nuitka:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}-latest
+    strategy:
+      matrix:
+        os: [windows, ubuntu]
     steps:
     - run: git clone --depth=1 -b ytdlp https://github.com/ytdl-patched/ytdl-patched "$(pwd)"
     - name: Set up Python 3.9
