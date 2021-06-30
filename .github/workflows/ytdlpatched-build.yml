@@ -15,7 +15,10 @@ jobs:
       matrix:
         os: [windows, ubuntu]
     steps:
-    - run: git clone --depth=1 -b ytdlp https://github.com/ytdl-patched/ytdl-patched "$(pwd)"
+    - uses: actions/checkout@v2
+      with:
+        repository: ytdl-patched/ytdl-patched
+        ref: ytdlp
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
