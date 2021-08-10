@@ -28,7 +28,7 @@ jobs:
         python -m pip install -U pip wheel
         pip install -U Nuitka zopflipy websockets pyyaml python-dateutil mutagen pycryptodome websockets
     - name: Test building it
-      run: yes | python3 -m nuitka --onefile yt_dlp/__main__.py
+      run: yes | python3 -m nuitka --onefile --standalone --follow-imports yt_dlp/__main__.py
 
   pyoxidizer:
     runs-on: ${{ matrix.os }}-latest
