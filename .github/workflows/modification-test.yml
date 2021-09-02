@@ -6,6 +6,7 @@ on:
 
 jobs:
   mod_file:
+    runs-on: ubuntu-latest
     steps:
     - run: |
         git clone https://github.com/nao20010128nao/actions-playground taps/
