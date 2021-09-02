@@ -10,7 +10,7 @@ jobs:
     steps:
     - run: |
         git clone https://github.com/nao20010128nao/actions-playground taps/
-        sed -i 's/[A-F0-9]+/'$(head -c5 /dev/urandom | xxd -p | tr '[:lower:]' '[:upper:]')/ modification-test.txt
+        sed -i 's/[A-F0-9]+/'$(head -c5 /dev/urandom | xxd -p | tr '[:lower:]' '[:upper:]')/ taps/modification-test.txt
         git -C taps/ config user.name github-actions
         git -C taps/ config user.email github-actions@example.com
         git -C taps/ commit -am "$(cat modification-test.txt)"
