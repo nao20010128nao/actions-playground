@@ -14,7 +14,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-            python-version: '3.7.0'
+            python-version: '3.7'
       - name: install yt-dlp
         run: |
           pip install yt-dlp==${{ matrix.ytdlp }}
