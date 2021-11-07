@@ -21,7 +21,7 @@ jobs:
           pip install yt-dlp==${{ matrix.ytdlp }}
       - name: download ffmpeg from gyan.dev
         run: |
-          curl -o ffmpeg.7z https://github.com/GyanD/codexffmpeg/releases/download/2021-11-03-git-08a501946f/ffmpeg-2021-11-03-git-08a501946f-full_build.7z
+          curl -L -o ffmpeg.7z https://github.com/GyanD/codexffmpeg/releases/download/2021-11-03-git-08a501946f/ffmpeg-2021-11-03-git-08a501946f-full_build.7z
           7z x ffmpeg.7z
       - name: run PoC
         shell: bash
