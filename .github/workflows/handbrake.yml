@@ -34,7 +34,7 @@ jobs:
         cd build
         make -j8
         make install
-        ls contrib/
+        tar -cf - contrib/ | (cd ../handbrake/ ; tar -tf - --strip-components=1)
     - name: Compress artifacts
       run: tar -cvJf handbrake.tar.xz handbrake/
     - uses: actions/upload-artifact@v3
