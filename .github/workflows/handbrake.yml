@@ -29,6 +29,14 @@ jobs:
 
     - name: Build HandBrake Linux
       run: |
-        ./configure --disable-gtk-update-checks --enable-qsv
+        mkdir handbrake
+        ./configure --disable-gtk-update-checks --enable-qsv --prefix=$PWD/handbrake/
         cd build
         make -j8
+        make install
+    - name: Compress artifacts
+      run: tar -cvJf handbrake.tar.xz handbrake/
+    - uses: actions/upload-artifact@v2
+      with:
+        name: binaries
+        path: handbrake.tar.xz
