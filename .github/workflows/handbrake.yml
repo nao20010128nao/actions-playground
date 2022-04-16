@@ -1,6 +1,8 @@
 name: HandBrake Build
 
-on: [push, pull_request]
+on:
+  workflow_dispatch:
+    inputs:
 
 jobs:
   build:
