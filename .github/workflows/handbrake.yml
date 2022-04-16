@@ -36,7 +36,7 @@ jobs:
         make install
     - name: Compress artifacts
       run: tar -cvJf handbrake.tar.xz handbrake/
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: binaries
         path: handbrake.tar.xz
