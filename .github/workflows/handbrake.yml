@@ -37,7 +37,7 @@ jobs:
         tar -cf - contrib/ | (cd ../handbrake/ ; tar -xvf - --strip-components=1)
     - name: Compress artifacts
       run: tar -cvJf handbrake.tar.xz handbrake/
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: binaries
         path: handbrake.tar.xz
